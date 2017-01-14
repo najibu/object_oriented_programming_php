@@ -1,41 +1,38 @@
 <?php 
 
-class Math {
-  public static function add(...$nums)
-  {
-    return array_sum($nums);
-  } 
+interface Logger {
+  public function execute($message);
 }
 
-// echo Math::add(1,2,3,4);
-
-class Person {
-  public $age = 1;
-
-  public function haveBirthday()
+class LogToFile implements Logger{
+  public function execute($message)
   {
-    return  $age++;
-  }
-
-  public function age()
-  {
-    return $this->age;
+    var_dump("Log the message to a file: " . $message);
   }
 }
 
-// $najibu = new Person;
-// $najibu->haveBirthday();
-// $najibu->haveBirthday();
- 
-// echo $najibu->age();
-
-// $sham = new Person;
-// $sham->haveBirthday();
-
-// echo $sham->age();
-
-class BankAccount {
-  const TAX = .09;
+class LogToDatabase  implements Logger {
+  public function execute($message)
+  {
+    var_dump("Log the message to a database: " . $message);
+  }
 }
 
-echo BankAccount::TAX;
+//...
+class UsersController {
+  protected $logger;
+  public function __construct(Logger $logger)
+  {
+    $this->logger = $logger;
+  }
+
+  public function show()
+  {
+    $user = "Najibu Nsubuga";
+    $this->logger->execute($user); 
+  }
+}
+
+$controller = new UsersController(new LogToDatabase);
+
+$controller->show(); 
