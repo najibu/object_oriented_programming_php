@@ -1,0 +1,15 @@
+{
+    "name": "Acme",
+    "description": "A Review of OOP",
+    "authors": [
+        {
+            "name": "najibu",
+            "email": "ns.najibu@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Acme\\": "src"
+        }
+    }
+}

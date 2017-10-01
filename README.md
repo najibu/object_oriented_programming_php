@@ -1,10 +1,9 @@
 # Understanding of object-oriented programming in PHP
 
-## Laracasts Object Oreinted Bootcamp <a href="https://laracasts.com/series/object-oriented-bootcamp-in-php">Series</a>
+## Object Oreinted Programming <a href="https://laracasts.com/series/object-oriented-bootcamp-in-php">OOP</a>
 
-As wonderful as Laravel is, it does assume that you have a basic understanding of object-oriented programming.
 
-## Contents Covered 
+## Contents
 1. Classes
 2. Getters and Setters
 3. Encapsulation
